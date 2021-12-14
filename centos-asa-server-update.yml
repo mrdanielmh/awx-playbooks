@@ -5,5 +5,7 @@
   #remote_user: root
 
   tasks:
-  - name: update scaleft-server-tools
-    command: yum update scaleft-server-tools
+    - name: Install the latest version of scaleft-server-tools
+      yum:
+        name: scaleft-server-tools
+        state: latest
