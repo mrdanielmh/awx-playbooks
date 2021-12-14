@@ -1,5 +1,6 @@
 ---
 - name: ScaleFT yum repo is installed
+  hosts: all
   yum_repository:
     name: ScaleFT
     description: ScaleFT YUM repo
@@ -7,12 +8,14 @@
     gpgkey: https://dist.scaleft.com/pki/scaleft_rpm_key.asc
 
 - name: ScaleFT Server Agent is installed
+  hosts: all
   yum:
     name:
       - scaleft-server-tools
     state: present
 
 - name: Wait until the lock file is removed
+  hosts: all
   wait_for:
     path: /var/run/yum.pid
     state: absent
