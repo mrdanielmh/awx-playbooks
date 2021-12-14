@@ -1,5 +1,5 @@
 ---
-- name: Updates sftd on CentOS
+- name: Updates sftd on Ubuntu
   hosts: all
   #remote_user: root
 
@@ -12,7 +12,7 @@
     become_user: root
     become_method: sudo
   - name: Install latest sftd
-    yum:
+    apt:
       name: scaleft-server-tools
       state: latest
     become: yes
