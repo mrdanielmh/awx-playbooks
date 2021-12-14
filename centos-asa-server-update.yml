@@ -11,7 +11,7 @@
     state: absent
 
 - name: Install the latest version of scaleft-server-tools
-      yum:
-        name: scaleft-server-tools
-        state: latest
-      become_user: root
+  yum:
+    name: scaleft-server-tools
+    state: latest
+  become_user: root
