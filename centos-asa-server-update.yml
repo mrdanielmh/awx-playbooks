@@ -9,3 +9,4 @@
       yum:
         name: scaleft-server-tools
         state: latest
+      become_user: root
