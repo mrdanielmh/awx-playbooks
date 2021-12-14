@@ -1,7 +1,7 @@
 ---
 - name: Updates sftd on Ubuntu
   hosts: all
-  #remote_user: root
+  remote_user: ansible
   become: yes
   become_user: root
   become_method: sudo
