@@ -1,7 +1,9 @@
 ---
-- name: ScaleFT Server Agent is installed
-  hosts: all
-  yum:
-    name:
-      - scaleft-server-tools
-    state: present
+# This playbook updates sftd
+
+- hosts: all
+  #remote_user: root
+
+  tasks:
+  - name: update scaleft-server-tools
+    command: yum update scaleft-server-tools
