@@ -5,10 +5,10 @@
   #remote_user: root
 
   tasks:
-- name: Remove apt lock file
-    file:
+- name: Wait until the lock file is removed
+    wait_for:
+     path: /var/lib/dpkg/lock-frontend
       state: absent
-      path: "/var/lib/dpkg/lock-frontend"
 
 - name: Install the latest version of scaleft-server-tools
       yum:
