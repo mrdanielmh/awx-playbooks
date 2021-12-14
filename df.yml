@@ -1,7 +1,7 @@
 ---
 # This playbook runs a basic DF command.
 
-- hosts: nagios
+- hosts: all
   #remote_user: root
 
   tasks:
