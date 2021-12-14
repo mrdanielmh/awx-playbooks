@@ -1,17 +1,14 @@
 ---
-# This playbook updates sftd
-
-- hosts: all
+- name: Updates sftd on CentOS
+  hosts: all
   #remote_user: root
 
-tasks:
-- name: Wait until the lock file is removed
-  wait_for:
-    path: /var/lib/dpkg/lock-frontend
-    state: absent
-
-- name: Install the latest version of scaleft-server-tools
-  yum:
-    name: scaleft-server-tools
-    state: latest
-  become_user: root
+  tasks:
+  - name: wait until the lock file is removed
+    wait_for:
+      path: /var/lib/dpkg/lock-frontend
+      state: absent
+  - name: Install latest sftd
+    yum:
+      name: scaleft-server-tools
+      state: latest
