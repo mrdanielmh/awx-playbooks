@@ -4,7 +4,7 @@
 - hosts: all
   #remote_user: root
 
-  tasks:
+tasks:
 - name: Wait until the lock file is removed
   wait_for:
     path: /var/lib/dpkg/lock-frontend
