@@ -2,6 +2,9 @@
 - name: Updates sftd on Ubuntu
   hosts: all
   #remote_user: root
+  become: yes
+  become_user: root
+  become_method: sudo
 
   tasks:
   - name: wait until the lock file is removed
