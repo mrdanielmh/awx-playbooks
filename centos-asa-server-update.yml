@@ -1,3 +1,4 @@
+---
 - name: Okta Advanced Server Acccess Server Agent is installed and updated
   yum:
     name:
