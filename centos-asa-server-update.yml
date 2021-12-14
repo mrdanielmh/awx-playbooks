@@ -5,7 +5,12 @@
   #remote_user: root
 
   tasks:
-    - name: Install the latest version of scaleft-server-tools
+- name: Remove apt lock file
+  file:
+    state: absent
+    path: "/var/lib/dpkg/lock-frontend"
+
+- name: Install the latest version of scaleft-server-tools
       yum:
         name: scaleft-server-tools
         state: latest
