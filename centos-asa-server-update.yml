@@ -6,9 +6,9 @@
 
   tasks:
 - name: Wait until the lock file is removed
-    wait_for:
-     path: /var/lib/dpkg/lock-frontend
-      state: absent
+        wait_for:
+            path: /var/lib/dpkg/lock-frontend
+            state: absent
 
 - name: Install the latest version of scaleft-server-tools
       yum:
